@@ -1,36 +1,28 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
 
-
-  <html lang="en"
-      xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
-      xmlns:p="http://primefaces.org/ui">
-       
-    <h:head>
-        <link rel="stylesheet" type="text/css" href="css/style.css"/>
-        <link rel="stylesheet" type="text/css" href="layout.css"/>
+<html>
+ 
     
-   
-   
-   
+    <head>
+       
 <title>E-health</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/cufon-yui.js"></script>
 <script type="text/javascript" src="js/arial.js"></script>
 <script type="text/javascript" src="js/cuf_run.js"></script>
   <link rel="stylesheet" href="css/style.css"/>
       <link href="default.css" rel="stylesheet" type="text/css" media="all" />
 <link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
 
-        <link rel="stylesheet" type="text/css" href="style.css"/>
-      
 
-    </h:head>
+
+    </head>
     
-    
+    <body>  
       <!--  <div class="main">
   <div class="main_resize">
       
@@ -74,44 +66,14 @@
 	
     
     
-   
-    <body>
-        <center>
-		<h:form id="form" class="register">
-                    
-                         <h:panelGroup rendered="#{not empty user}">
-                        
-                        <h1 class="register-title">Bienvenue #{user.emailagent} !</h1>
-                        <a href="modif.xhtml"> <h4>modifier votre compte</h4> </a>
-                        
-                        <h:commandButton class="register-button" value="Logout" action="#{ABean.logout}" />
-                        
-                           </h:panelGroup> 
-                        <h:panelGroup rendered="#{empty user}">
-                            <h3 class="register-title"> Connection</h3>
-             
-                            <h:inputText class="register-input" id="email" value="#{ABean.emailagent}" a:placeholder="Entrez votre Email" required="true" />
-
-                            <h:inputSecret class="register-input" id="pswd" value="#{ABean.passwordagent}" a:placeholder="Entrez votre mot de passe" required="true" /> 
-                            
-                            <center> <h4> <p:commandButton update="form" class="register-button" value="Se connecter" action="#{ABean.verifyUser}" /></h4>
-                            </center>
-                            <a href="chooseinscrit.htm"><th> <h4>Nouveau utilisateur ?</h4> </th></a>
-                        
-                            <a href="pswdforgotten.htm"><th> <h4>Mot de passe oublié ?</h4></th> </a>
-                        
-                        </h:panelGroup>
-                    
-		</h:form>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="style.css">
         
-       
-        </center>
-        
-        
-     
-    </body>
-    
-           <div class="footer">
+        <div>
+            <iframe height="500" width="1200" src="chooseinscrit.xhtml" name="targetframe" allowTransparency="no" scrolling="no" frameborder="4" >
+            </iframe>
+            </div>
+            <div class="footer">
 
              <div class="fbg">
       <div class="col c2">
@@ -120,7 +82,7 @@
     
       <div class="col c3">
         <h2><span>E-health</span></h2>
-        <p>Vous étes médecin, pharmacien ou dentiste?  Vous avez une difficulté à publier vos offres?
+        <p>Vous étes médecin, pharmacien ou dentiste?  Vous avez une difficulté à publier vos offres?<br>
             A étre localiser? Plus jamais !E-health vous offre l'opportunité d'intéragir avec vos clients.
             Avec nous c'est vos clients qui vous cherchent.Partager avec nous vos informations et nous ferons l'affaire.  </p>
       </div>
@@ -128,10 +90,10 @@
     </div>
 
     <div class="footer_resize">
-      <p class="lf">Copyright E-health - All Rights Reserved</p>
+      <p class="lf">Copyright &copy E-health - All Rights Reserved</p>
    
       <div class="clr"></div>
     </div>
   </div>
-
+</body>
 </html>
