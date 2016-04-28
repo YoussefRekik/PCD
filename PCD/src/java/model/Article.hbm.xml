@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 24 avr. 2016 23:55:04 by Hibernate Tools 4.3.1 -->
+<!-- Generated 29 avr. 2016 00:01:14 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="model.Article" table="article" catalog="pcd" optimistic-lock="version">
         <id name="idarticle" type="java.lang.Integer">
@@ -14,11 +14,11 @@
         <many-to-one name="forum" class="model.Forum" fetch="select">
             <column name="idforum" />
         </many-to-one>
-        <property name="nomarticle" type="string">
-            <column name="nomarticle" />
-        </property>
         <property name="articlecontent" type="string">
             <column name="articlecontent" length="65535" />
+        </property>
+        <property name="nomarticle" type="string">
+            <column name="nomarticle" />
         </property>
         <property name="date1" type="timestamp">
             <column name="date1" length="19" />

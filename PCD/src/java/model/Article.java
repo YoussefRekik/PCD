@@ -1,5 +1,5 @@
 package model;
-// Generated 24 avr. 2016 23:55:02 by Hibernate Tools 4.3.1
+// Generated 29 avr. 2016 00:01:12 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -15,19 +15,19 @@ public class Article  implements java.io.Serializable {
      private Integer idarticle;
      private AgentMedical agentMedical;
      private Forum forum;
-     private String nomarticle;
      private String articlecontent;
+     private String nomarticle;
      private Date date1;
      private Set commentaires = new HashSet(0);
 
     public Article() {
     }
 
-    public Article(AgentMedical agentMedical, Forum forum, String nomarticle, String articlecontent, Date date1, Set commentaires) {
+    public Article(AgentMedical agentMedical, Forum forum, String articlecontent, String nomarticle, Date date1, Set commentaires) {
        this.agentMedical = agentMedical;
        this.forum = forum;
-       this.nomarticle = nomarticle;
        this.articlecontent = articlecontent;
+       this.nomarticle = nomarticle;
        this.date1 = date1;
        this.commentaires = commentaires;
     }
@@ -53,19 +53,19 @@ public class Article  implements java.io.Serializable {
     public void setForum(Forum forum) {
         this.forum = forum;
     }
-    public String getNomarticle() {
-        return this.nomarticle;
-    }
-    
-    public void setNomarticle(String nomarticle) {
-        this.nomarticle = nomarticle;
-    }
     public String getArticlecontent() {
         return this.articlecontent;
     }
     
     public void setArticlecontent(String articlecontent) {
         this.articlecontent = articlecontent;
+    }
+    public String getNomarticle() {
+        return this.nomarticle;
+    }
+    
+    public void setNomarticle(String nomarticle) {
+        this.nomarticle = nomarticle;
     }
     public Date getDate1() {
         return this.date1;
