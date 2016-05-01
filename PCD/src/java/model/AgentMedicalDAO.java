@@ -32,7 +32,7 @@ public class AgentMedicalDAO {
         	   existence = 1;
                 }
                 if (email.equals("admin1@pcd.com")&&pswd.equals("admin1")) existence=2;
-                if (email.equals("admin2@pcd.com")&&pswd.equals("admin2")) existence=2;
+                
                 
                 return existence;
 	}   

@@ -1,8 +1,3 @@
-<%-- 
-    Document   : map
-    Created on : 14 avr. 2016, 22:16:07
-    Author     : Rahma
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
@@ -10,69 +5,70 @@
 
 <html>
  
+    <h:head>
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="layout.css"/>
     
-    <head>
-       
+   
+   
+   
 <title>E-health</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
-<script type="text/javascript" src="js/cufon-yui.js"></script>
 <script type="text/javascript" src="js/arial.js"></script>
 <script type="text/javascript" src="js/cuf_run.js"></script>
   <link rel="stylesheet" href="css/style.css"/>
       <link href="default.css" rel="stylesheet" type="text/css" media="all" />
 <link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
 
- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="layout.css">  
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+      
 
-    </head>
-
+    </h:head>
+    
+    
+      <!--  <div class="main">
+  <div class="main_resize">
+      
+    <div class="header">
+        <div class="menu_nav"></div></div></div>-->
+      <!--<ul>
+          <li class="active"><a href="index.htm">Page d'accueil</a></li>
+              <li><a href="map.htm">Localisez vous</a></li>
+          <li><a href="afficheroffres.htm">Découvrez nos offres</a></li>
+          <li><a href="lireblog.htm">Visitez notre blog</a></li>
+          <li><a href="statistique.htm">Nos statistique</a></li>
+        </ul>-->
    
-	<div class="wrapper">
-	
-	</div>
-   
-            <div id="header-wrapper">
+      <div id="header-wrapper">
 	
 
           <div id="menu">
-			<ul>
-				  <li ><a href="index.htm">Page d'accueil</a></li>
-              <li class="active"><a href="map.htm">Localisez vous</a></li>
-          <li><a href="afficheroffres.htm">Découvrez nos offres</a></li>
-          <li><a href="lireblog.htm">Visitez notre blog</a></li>
-          <li><a href="statistique.htm">Contacter nous</a></li>
-			</ul>
-              </div>
-                        </div>
+		<ul>
+                    <li class="active"><a href="login.xhtml">Page d'accueil</a></li>
+                    <li><a href="map.htm">Localisez vous</a></li>
+                    <li><a href="afficheroffres.htm">Découvrez nos offres</a></li>
+                    <li><a href="blog.xhtml">Visitez notre blog</a></li>
+                    <li><a href="statistique.htm">Statistiques</a></li>
+		</ul>
+          </div>
+     </div>
     
      
 <div class="wrapper">   
-            
    <img src="images/EH.png" width="300" height="289" alt="" />
-   
-
-               <img src="images/im1.jpg" width="700" height="289" alt="" />
-    
-   
-    
-
-	
-	</div>
-	
-    
-    
-      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="style.css">
-       
+   <img src="images/im1.jpg" width="700" height="289" alt="" />
+</div>   
+      <body>
+      <h:form id="form" class="register">
      
         <div >
             <iframe height="500" width="1200" src="map.xhtml" name="targetframe" allowTransparency="no" scrolling="yes" frameborder="4" >
             </iframe>
         </div>
+          </h:form>
+        </body>
 
  <div class="footer">
 

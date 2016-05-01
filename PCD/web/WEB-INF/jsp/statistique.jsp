@@ -40,7 +40,7 @@
 
           <div id="menu">
 			<ul>
-				  <li ><a href="index.htm">Page d'accueil</a></li>
+				  <li ><a href="login.xhtml">Page d'accueil</a></li>
               <li ><a href="map.htm">Configurez votre compte</a></li>
           <li><a href="lireblog.htm">Agents médicaux</a></li>
           <li class="active"><a href="statistique.htm">Statistiques</a></li>

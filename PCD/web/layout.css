@@ -24,6 +24,11 @@ form{     background-color:#03224c;
     float: left;
    
 }
+.form2{     background-color:#03224c;
+
+    float: contour;
+   
+}
 .register{background-color:#03224c;}
 #header {
         width: 1000px;
@@ -489,6 +494,6 @@ h7{ display: block;
 #indexR{
     height: 850px;
     width: 400px;
-    float: left;
+    float: right;
     
 }

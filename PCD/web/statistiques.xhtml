@@ -6,8 +6,7 @@
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
-      xmlns:p="http://primefaces.org/ui"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:p="http://primefaces.org/ui">
        
     <h:head>
         <link rel="stylesheet" type="text/css" href="css/style.css"/>
@@ -18,21 +17,6 @@
 <script type="text/javascript" src="js/script.js"></script>
 <script type="text/javascript" src="js/arial.js"></script>
 <script type="text/javascript" src="js/cuf_run.js"></script>
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
-        <script type="text/javascript">
-        window.onload = function getCoordPosition(){
-	if(navigator.geolocation){
-	    navigator.geolocation.getCurrentPosition(function(position){
-	        var latitude = position.coords.latitude;
-	        var longitude = position.coords.longitude;
-	        var altitude = position.coords.altitude;
-	        //document.getElementById('geolocation').innerHTML = 'latitude : ' + latitude + '<br />' + 'longitude : ' + longitude + '<br />' + 'altitude : ' + altitude + '<br />';
-                document.getElementById('agentForm:a').value = latitude;
-                document.getElementById('agentForm:b').value = longitude;
-            });
-	}
-        }
-        </script>
   <link rel="stylesheet" href="css/style.css"/>
       <link href="default.css" rel="stylesheet" type="text/css" media="all" />
 <link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
@@ -70,12 +54,12 @@
                         <h:panelGroup rendered="#{user.emailagent != 'admin1@pcd.com'}">
                         <li><a href="blog.xhtml">Visitez notre blog</a></li>
                         <li><a href="recherche.xhtml">Chercher un centre</a></li>
-                        <li class="active"><a href="prop.xhtml">Proposer un centre</a></li>
+                        <li><a href="prop.xhtml">Proposer un centre</a></li>
                         <li><a href="modif.xhtml">Modifier votre compte</a></li>
                         </h:panelGroup>
                     </h:panelGroup>
                     <h:panelGroup rendered="#{user.emailagent eq 'admin1@pcd.com'}">
-                    <li><a href="statistiques.xhtml">Statistiques</a></li>
+                    <li class="active"><a href="statistiques.xhtml">Statistiques</a></li>
                     <li><a href="blog.xhtml">Visitez notre blog</a></li>
                     <li><a href="affisupp.xhtml">Afficher/Supprimer des Agents</a></li>
                     </h:panelGroup>
@@ -123,46 +107,9 @@
                     
                     
 		</h:form>
-            <iframe height="10" width="1200" name="targetframe" allowTransparency="no" scrolling="yes" frameborder="4" >
-            </iframe>
             <div >
-            
-		<h:form class="register" id="agentForm">
-                 
-                        
-                        <h1 class="register-title"> Proposition d'un centre médical </h1> 
-                        <h:inputText class="register-input" a:placeholder="NOM" value="#{ABean.nomagent}" required="true" />
-                         <h:inputText class="register-input" a:placeholder="PRENOM" value="#{ABean.prenomagent}" required="true"/>
-                        
-                        <h:inputText class="register-input" a:placeholder="Ville" value="#{ABean.nomvilleagent}" required="true"/>
-                        <h:inputText class="register-input" a:placeholder="Adresse" value="#{ABean.nompadresseagent}" required="true"/>
-                        <h:inputText class="register-input" a:placeholder="Code Postal" value="#{ABean.codepostalagent}" required="true"/>
-                        <h:inputText class="register-input" a:placeholder="Téléphone" value="#{ABean.telagent}" required="true"/>
-                             
-                        <table>
-                            <tr>
-                                <td><h:outputLabel class="register-input" value="Proprieté :" /></td>
-                                <td><h:selectOneMenu styleClass="menu" value="#{ABean.typeagent}">
-                                
-                                <f:selectItem itemValue="1" itemLabel="Clinique" />
-                                <f:selectItem itemValue="2" itemLabel="Médecin" />
-                                <f:selectItem itemValue="3" itemLabel="Dentiste" />
-                                <f:selectItem itemValue="4" itemLabel="Pharmacien" />
-                                <f:selectItem itemValue="5" itemLabel="Hopital" />
-                                    </h:selectOneMenu></td>
-                                </tr>
-                                    </table>
-                        
-                        <h:inputText class="register-input" a:placeholder="Longtitude" value="#{ABean.lon}" required="true"/>
-                        
-                        <h:inputText class="register-input" a:placeholder="Latitude" value="#{ABean.lat}" required="true"/>
-                        
-                        
-                    <h:commandButton class="register-button" value="Submit" action="#{ABean.propagent}"/>
-                        
-		</h:form>
-       
-                
+            <iframe height="500" width="1200" src="stati.html" name="targetframe" allowTransparency="no" scrolling="no" frameborder="4" >
+            </iframe>
         </div>
             
         
@@ -226,9 +173,3 @@
       
 
 </html>
-
-
-
-
-
-

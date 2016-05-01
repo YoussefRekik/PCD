@@ -6,17 +6,15 @@
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
        
     <h:head>
         <link rel="stylesheet" type="text/css" href="css/style.css"/>
         <link rel="stylesheet" type="text/css" href="layout.css"/>
-    
-   
-   
-   
-<title>E-health</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>E-health</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
 <script type="text/javascript" src="js/arial.js"></script>
@@ -30,54 +28,45 @@
 
     </h:head>
     
-    
-      <!--  <div class="main">
-  <div class="main_resize">
-      
-    <div class="header">
-        <div class="menu_nav"></div></div></div>-->
-      <!--<ul>
-          <li class="active"><a href="index.htm">Page d'accueil</a></li>
-              <li><a href="map.htm">Localisez vous</a></li>
-          <li><a href="afficheroffres.htm">Découvrez nos offres</a></li>
-          <li><a href="lireblog.htm">Visitez notre blog</a></li>
-          <li><a href="statistique.htm">Nos statistique</a></li>
-        </ul>-->
+
    
-      <div id="header-wrapper">
+<div id="header-wrapper">
 	
 
           <div id="menu">
-			<ul>
-				  <li class="active"><a href="index.htm">Page d'accueil</a></li>
-              <li><a href="map.htm">Localisez vous</a></li>
-          <li><a href="afficheroffres.htm">Découvrez nos offres</a></li>
-          <li><a href="blog.xhtml">Visitez notre blog</a></li>
-          <li><a href="statistique.htm">Contacter nous</a></li>
-			</ul>
-              </div>
-                        </div>
+		<ul>
+                    <li class="active"><a href="login.xhtml">Page d'accueil</a></li>
+                    <h:panelGroup rendered="#{empty user}">
+                    <li><a href="map2.xhtml">Localisez vous</a></li>
+                    <li><a href="offres.xhtml">Découvrez nos offres</a></li>
+                    </h:panelGroup>
+                    <h:panelGroup rendered="#{not empty user}">
+                        <h:panelGroup rendered="#{user.emailagent != 'admin1@pcd.com'}">
+                        <li><a href="blog.xhtml">Visitez notre blog</a></li>
+                        <li><a href="recherche.xhtml">Chercher un centre</a></li>
+                        <li><a href="prop.xhtml">Proposer un centre</a></li>
+                        <li><a href="modif.xhtml">Modifier votre compte</a></li>
+                        </h:panelGroup>
+                    </h:panelGroup>
+                    <h:panelGroup rendered="#{user.emailagent eq 'admin1@pcd.com'}">
+                    <li><a href="statistiques.xhtml">Statistiques</a></li>
+                    <li><a href="blog.xhtml">Visitez notre blog</a></li>
+                    <li><a href="affisupp.xhtml">Afficher/Supprimer des Agents</a></li>
+                    </h:panelGroup>
+		</ul>
+          </div>
+     </div>
     
      
 <div class="wrapper">   
-            
    <img src="images/EH.png" width="300" height="289" alt="" />
-   
-
-               <img src="images/im1.jpg" width="700" height="289" alt="" />
-    
-   
-    
-
-	
-	</div>
-	
-    
-    
-   
-    <body>
-        <center>
-		<h:form id="form" class="register">
+   <img src="images/im1.jpg" width="700" height="289" alt="" />
+</div>
+          
+        
+ <body>
+        
+            <h:form id="form" class="register">
                     
                          <h:panelGroup rendered="#{not empty user}">
                         
@@ -104,14 +93,62 @@
                     
 		</h:form>
         
-       
-        </center>
+            
+        <iframe height="10" width="1000" name="targetframe" allowTransparency="no" scrolling="yes" frameborder="4" >
+            </iframe>
+        
+        <ui:repeat var="entry" value="#{ArBean.list1}" varStatus="status">
+     <div class="post_box">
+          
+         <h2>#{entry.key.nomarticle}</h2>		
+         <div class="news_meta">Posted on #{entry.key.date1} </div>
+                <div class="image_wrapper"><img src="images/templatemo_image_01.jpg" alt="image 1" /></div>
+                <p align="justify"></p>
+              <div class="cleaner">#{entry.key.articlecontent}</div>
+         </div> 
+            <ui:repeat var="entry1" value="#{entry.value}" >
+               
+                  
+           <div class="cleaner">#{entry1.commentairecontent} </div> 
+          
+           <f:param name="idart" value="#{entry.key.idarticle}" />
+                
+            </ui:repeat>
+            
+        </ui:repeat>
+           
         
         
-     
-    </body>
-    
-           <div class="footer">
+        
+   
+      <iframe height="10" width="1000" name="targetframe" allowTransparency="no" scrolling="yes" frameborder="4" >
+            </iframe>
+      
+      <div id="footer">
+	<div class="container">
+		<div class="fbox1">
+		<span class="icon icon-map-marker"></span>
+			<span>Mannouba Campus
+			<br />Ensi TN 2010</span>
+		</div>
+		<div class="fbox1">
+			<span class="icon icon-phone"></span>
+			<span>
+				Telephone: +216 71 123 465
+			</span>
+		</div>
+		<div class="fbox1">
+			<span class="icon icon-envelope"></span>
+			<span>pcd.e.health@gmail.com</span>
+		</div>
+	</div>
+    </div>
+    <iframe height="10" width="1000" name="targetframe" allowTransparency="no" scrolling="yes" frameborder="4" >
+            </iframe>
+      
+      
+        <div class="footer">
+            <div class="container">
 
              <div class="fbg">
       <div class="col c2">
@@ -133,5 +170,9 @@
       <div class="clr"></div>
     </div>
   </div>
+        
+      </div>
+      
+    </body>  
 
 </html>

@@ -41,10 +41,10 @@
 
           <div id="menu">
 			<ul>
-				  <li ><a href="index.htm">Page d'accueil</a></li>
+				  <li ><a href="login.xhtml">Page d'accueil</a></li>
               <li><a href="map.htm">Localisez vous</a></li>
           <li class="active"><a href="afficheroffres.htm">Découvrez nos offres</a></li>
-          <li><a href="lireblog.htm">Visitez notre blog</a></li>
+          <li><a href="blog.xhtml">Visitez notre blog</a></li>
           <li><a href="statistique.htm">Contacter nous</a></li>
 			</ul>
               </div>

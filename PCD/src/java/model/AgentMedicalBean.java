@@ -169,7 +169,7 @@ public class AgentMedicalBean {
                            // User user = userService.find(username, password);
                             FacesContext context = FacesContext.getCurrentInstance();
                             context.getExternalContext().getSessionMap().put("user", agent);
-                            return "login";
+                            return "adminloggedin";
                                 
                         }
                 else return "login";
@@ -193,6 +193,16 @@ public class AgentMedicalBean {
         return "login";
         }
     
+    public String delete(int telagent){
+        Session session = HibernateUtil.getSessionFactory().openSession();
+                session.beginTransaction();
+                
+                session.createQuery("DELETE from AgentMedical as agent where agent.telagent = '"+telagent+"'");
+                
+                session.getTransaction().commit();
+		session.close();
+        return "affisupp";
+        }
     
     
     
