@@ -21,8 +21,6 @@ body {
 }
 form{     background-color:#03224c;
 
-    float: left;
-   
 }
 .form2{     background-color:#03224c;
 
@@ -495,5 +493,11 @@ h7{ display: block;
     height: 850px;
     width: 400px;
     float: right;
+    
+}
+#d12{
+    height: 850px;
+    width: 1100px;
+    float: left;
     
 }
