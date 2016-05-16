@@ -70,7 +70,7 @@
 			form label
 			{
 				display: block;
-				text-align: left;
+				
 				margin-bottom: 0.5em;
 			}
 			
@@ -85,7 +85,6 @@
 			form select,
 			form textarea
 			{
-				position: relative;
 				-webkit-appearance: none;
 				display: block;
 				border: 0;
