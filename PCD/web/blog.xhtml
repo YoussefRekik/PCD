@@ -28,6 +28,9 @@ and open the template in the editor.
 <script type="text/javascript" src="js/cuf_run.js"></script>
 <style>
             .whitetext{ color: #FFFFFF; }
+            form {
+                float: left;
+                }
 </style>
   <link rel="stylesheet" href="css/style.css"/>
       <link href="default.css" rel="stylesheet" type="text/css" media="all" />
@@ -73,7 +76,7 @@ and open the template in the editor.
             </iframe>
     <body>
         
-        <div class="indexL">
+        
 		<h:form id="form" class="register">
                     
                          <h:panelGroup rendered="#{not empty user}">
@@ -100,12 +103,9 @@ and open the template in the editor.
                         </h:panelGroup>
                     
 		</h:form>
-        </div>
-            
         
-       
-        <div class="indexR">
-        <h:form id="form1">
+            
+        <h:form id="form1" >
             
             <h3 class="register-title"> Les articles plus récents</h3> 
             <a href="ajouterarticle.xhtml"> <h4>Ajouter un Article</h4> </a>
@@ -134,7 +134,7 @@ and open the template in the editor.
             
         </ui:repeat>
           </h:form>  
-        </div>
+       
         
         
          

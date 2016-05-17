@@ -1,37 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
 
-<html lang="en"
+
+  <html lang="en"
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
-          
-      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+       
     <h:head>
-        <title>x</title>
         <link rel="stylesheet" type="text/css" href="layout.css"/>
+    <title>E-health</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+<style>
+            .whitetext{ color: #000000; }
+            form {
+                float: left;
+                }
+
+</style>
+<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/arial.js"></script>
+<script type="text/javascript" src="js/cuf_run.js"></script>
+  <link rel="stylesheet" href="css/style.css"/>
+      <link href="default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+ <script type="text/javascript">
+        window.onload = function getCoordPosition(){
+	if(navigator.geolocation){
+	    navigator.geolocation.getCurrentPosition(function(position){
+	        var latitude = position.coords.latitude;
+	        var longitude = position.coords.longitude;
+	        var altitude = position.coords.altitude;
+	        //document.getElementById('geolocation').innerHTML = 'latitude : ' + latitude + '<br />' + 'longitude : ' + longitude + '<br />' + 'altitude : ' + altitude + '<br />';
+                document.getElementById('agentForm:a').value = latitude;
+                document.getElementById('agentForm:b').value = longitude;
+            });
+	}
+        }
+        </script>
+
         
     </h:head>
-    <h:body>
-       
+      
+      <div id="header-wrapper">
+	
+
+          <div id="menu">
+		<ul>
+                    <li class="active"><a href="login.xhtml">Page d'accueil</a></li>
+                    <h:panelGroup rendered="#{empty user}">
+                    <li><a href="map2.xhtml">Localisez vous</a></li>
+                    <li><a href="offres.xhtml">Découvrez nos offres</a></li>
+                    </h:panelGroup>
+                    <h:panelGroup rendered="#{not empty user}">
+                        <h:panelGroup rendered="#{user.emailagent != 'admin1@pcd.com'}">
+                        <li><a href="blog.xhtml">Visitez notre blog</a></li>
+                        <li><a href="recherche.xhtml">Chercher un centre</a></li>
+                        <li><a href="prop.xhtml">Proposer un centre</a></li>
+                        <li><a href="modif.xhtml">Modifier votre compte</a></li>
+                        </h:panelGroup>
+                    </h:panelGroup>
+                    <h:panelGroup rendered="#{user.emailagent eq 'admin1@pcd.com'}">
+                    <li><a href="statistiques.xhtml">Statistiques</a></li>
+                    <li><a href="blog.xhtml">Visitez notre blog</a></li>
+                    <li><a href="affisupp.xhtml">Afficher/Supprimer des Agents</a></li>
+                    </h:panelGroup>
+		</ul>
+          </div>
+     </div>
+    
+     
+<div class="wrapper">   
+   <img src="images/EH.png" width="300" height="289" alt="" />
+   <img src="images/im1.jpg" width="700" height="289" alt="" />
+</div>
+          <iframe height="10" width="1200" name="targetframe" allowTransparency="no" scrolling="yes" frameborder="4" >
+            </iframe>
+        
+ <body>
+        <div class="indexL">
+            <h:form id="form" class="register">
+                    
+                         <h:panelGroup rendered="#{not empty user}">
+                        
+                        <h1 class="register-title">Bienvenue #{user.emailagent} !</h1>
+                        <a href="modif.xhtml"> <h4>modifier votre compte</h4> </a>
+                        
+                        <h:commandButton class="register-button" value="Logout" action="#{ABean.logout}" />
+                        
+                           </h:panelGroup> 
+                        <h:panelGroup rendered="#{empty user}">
+                            <h3 class="register-title"> Connection</h3>
+             
+                            <h:inputText class="register-input" id="email" value="#{ABean.emailagent}" a:placeholder="Entrez votre Email" required="true" />
+
+                            <h:inputSecret class="register-input" id="pswd" value="#{ABean.passwordagent}" a:placeholder="Entrez votre mot de passe" required="true" /> 
+                            
+                            <center> <h4> <p:commandButton update="form" class="register-button" value="Se connecter" action="#{ABean.verifyUser}" /></h4>
+                            </center>
+                            <a href="chooseinscrit.htm"><th> <h4>Nouveau utilisateur ?</h4> </th></a>
+                        
+                            <a href="pswdforgotten.htm"><th> <h4>Mot de passe oublié ?</h4></th> </a>
+                        
+                        </h:panelGroup>
+                    
+		</h:form>
+        </div>
+       <iframe style="float:left;" height="10" width="200" name="targetframe" allowTransparency="no" scrolling="yes" frameborder="4" >
+            </iframe>
         <h:form class="register" id="agentForm">
                     
                          <a href="chooseinscrit.xhtml">  <h4>Retour en arrière</h4> </a>
                          <h1 class="register-title"> Inscription </h1>
                         
-                         <h:inputText class="register-input" p:placeholder="NOM" value="#{MBean.nommembre}" required="true"/>
-                         <h:inputText class="register-input" p:placeholder="PRENOM" value="#{MBean.prenommembre}" required="true"/>
-                         <h:inputText class="register-input" p:placeholder="pseudo" value="#{MBean.pseudomembre}" required="true"/>
-                         <h:inputSecret class="register-input" p:placeholder="Mot de passe" value="#{MBean.passwordmembre}" required="true"/>
-                         <h:inputText class="register-input" p:placeholder="Email" value="#{MBean.emailmembre}" required="true"/>
-                         <h:inputText class="register-input" p:placeholder="Téléphone" value="#{MBean.numtelmembre}" required="true"/>
+                         <h:inputText class="register-input" a:placeholder="NOM" value="#{MBean.nommembre}" required="true"/>
+                         <h:inputText class="register-input" a:placeholder="PRENOM" value="#{MBean.prenommembre}" required="true"/>
+                         <h:inputText class="register-input" a:placeholder="pseudo" value="#{MBean.pseudomembre}" required="true"/>
+                         <h:inputSecret class="register-input" a:placeholder="Mot de passe" value="#{MBean.passwordmembre}" required="true"/>
+                         <h:inputText class="register-input" a:placeholder="Email" value="#{MBean.emailmembre}" required="true"/>
+                         <h:inputText class="register-input" a:placeholder="Téléphone" value="#{MBean.numtelmembre}" required="true"/>
                         
                         
                          <h:commandButton class="register-button" value="Submit" action="#{MBean.savemembre}"/>   
                      
                         
 		</h:form>
+     <iframe height="200" width="1000" name="targetframe" allowTransparency="no" scrolling="yes" frameborder="4" >
+            </iframe>
        
-   
-   </h:body>
+  <div class="footer">
+            <div class="container">
+
+             <div class="fbg">
+      <div class="col c2">
+        <h2><span>Nos agents</span></h2>
+         <a href="#"><img src="images/medecin.jpg" width="58" height="58" alt="" /></a> <a href="#"><img src="images/pharmacie.jpg" width="58" height="58" alt="" /></a> <a href="#"><img src="images/hopital.png" width="58" height="58" alt="" /></a> <a href="#"><img src="images/clinique.jpg" width="58" height="58" alt="" /></a> <a href="#"><img src="images/dentiste.jpg" width="58" height="58" alt="" /></a> </div>
     
+      <div class="col c3">
+        <h2><span>E-health</span></h2>
+        <p>Vous étes médecin, pharmacien ou dentiste?  Vous avez une difficulté à publier vos offres?
+            A étre localiser? Plus jamais !E-health vous offre l'opportunité d'intéragir avec vos clients.
+            Avec nous c'est vos clients qui vous cherchent.Partager avec nous vos informations et nous ferons l'affaire.  </p>
+      </div>
+      <div class="clr"></div>
+    </div>
+   <iframe height="10" width="1000" name="targetframe" allowTransparency="no" scrolling="yes" frameborder="4" >
+            </iframe>
+
+        </div>
+        
+      </div> 
+     <div id="footer">
+	<div class="container">
+		<div class="fbox1">
+		<span class="icon icon-map-marker"></span>
+			<span>Mannouba Campus
+			<br />Ensi TN 2010</span>
+		</div>
+		<div class="fbox1">
+			<span class="icon icon-phone"></span>
+			<span>
+				Telephone: +216 71 123 465
+			</span>
+		</div>
+		<div class="fbox1">
+			<span class="icon icon-envelope"></span>
+			<span>pcd.e.health@gmail.com</span>
+		</div>
+	</div>
+    </div>
+
+ </body>  
         
 </html>
