@@ -278,16 +278,15 @@ font-size: 100%;
 }
 
 .register-button {
-      border-bottom-color: #142647;
+  border-bottom-color: #142647;
   border-color: #142647;
-    display: block;
+  display: block;
   margin-bottom: 10px;
-
-          border-radius: 10px;
-margin: 20px;
+  border-radius: 10px;
+  margin: 20px;
   padding: 0px;
   border: 0;
-font-size: 100%;
+  font-size: 100%;
   font: inherit;
   display: block;
   width: 80%;

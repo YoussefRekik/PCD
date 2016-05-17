@@ -128,10 +128,10 @@ and open the template in the editor.
                 
             </ui:repeat>
             
-                
-                <h:inputText class="register-input" value="#{ComBean.map[entry.key.idarticle]}"/>
-            <h:commandButton class="register-button" value="commenter" action="#{ComBean.savecommentaires(entry.key.idarticle)}" />
-            
+            <table>
+                <tr> <td></td><td><h:inputText class="register-input" value="#{ComBean.map[entry.key.idarticle]}"/></td>
+                <td><h:commandButton class="register-button" value="commenter" action="#{ComBean.savecommentaires(entry.key.idarticle)}" /></td>
+                </tr></table>
         </ui:repeat>
           </h:form>  
        
