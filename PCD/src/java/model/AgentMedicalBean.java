@@ -176,17 +176,6 @@ public class AgentMedicalBean {
                 }
     
     
-    public void emailvalidator(FacesContext context, UIComponent component, Object value) throws ValidatorException {
-  String selectedRadio = (String) value;
-  String msg = "no email set";
-  //String clubNameFromComp = (String) clubNameBind.getSubmittedValue();
-  //log("\n\t ##clubName=" + clubNameFromComp + ",##selectedRadio=" + selectedRadio + "##\n\t");
-  //if ((clubNameFromComp == null || "".equalsIgnoreCase(clubNameFromComp)) && "Y".equalsIgnoreCase(selectedRadio)) {
-    throw new ValidatorException(new FacesMessage(FacesMessage.SEVERITY_ERROR, msg, msg));
-    //}
-}
-    
-    
     
     public String logout(){
         FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
