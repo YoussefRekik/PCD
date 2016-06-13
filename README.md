@@ -1,5 +1,4 @@
 # PCD Solution de géolocalisation des organismes médicaux
-
 Description du sujet :
 L’un des facteurs essentiels derrière l’idée de notre projet est le manque d’information chez les patients à propos de l’emplacement des hôpitaux, les pharmacies et les autres services médicaux. Les patients veulent connaitre les journées de consultations des médecins, leurs qualités de services en plus les tarifs, mais ceci reste indisponible encore en Tunisie.
 Dès qu’on pose ce problème, il faut parler des pharmacies de nuit/jour/garde, les médecins généralistes/spécialistes, les dentistes généralistes/chirurgiens etc…, leurs horaires de travail et leurs adresses c’est le pire problème dont souffre tout le monde.
