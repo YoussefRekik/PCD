@@ -1,3 +1,5 @@
+1 - Download a [tarball of libsodium](https://download.libsodium.org/libsodium/releases)
+
 # PCD Solution de géolocalisation des organismes médicaux
 Description du sujet :
 L’un des facteurs essentiels derrière l’idée de notre projet est le manque d’information chez les patients à propos de l’emplacement des hôpitaux, les pharmacies et les autres services médicaux. Les patients veulent connaitre les journées de consultations des médecins, leurs qualités de services en plus les tarifs, mais ceci reste indisponible encore en Tunisie.
